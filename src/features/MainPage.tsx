@@ -1,7 +1,7 @@
 import type { IPage } from "../types";
 
 
-function MainPanelContent() {
+function MainPageContent() {
 
   return (
     <div>
@@ -10,10 +10,10 @@ function MainPanelContent() {
   );
 }
 
-export const MainPanel: IPage = {
+export const MainPage: IPage = {
   icon: <span>🏠</span>,
   title: '首页',
   description: '首页',
   order: 0,
-  content: MainPanelContent
+  content: MainPageContent
 }

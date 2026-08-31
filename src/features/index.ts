@@ -1,10 +1,12 @@
 import type { IPage } from "../types";
-import { AgentPanel } from "./AgentPage";
-import { MainPanel } from "./MainPage";
-import { WorkspacePanel } from "./WorkspacePage";
+import { AgentPage } from "./AgentPage";
+import { InteropPage } from "./InteropPage";
+import { MainPage } from "./MainPage";
+import { WorkspacePage } from "./WorkspacePage";
 
 export const defaultPanels: IPage[] = [
-  MainPanel,
-  WorkspacePanel,
-  AgentPanel
+  MainPage,
+  WorkspacePage,
+  AgentPage,
+  InteropPage
 ]

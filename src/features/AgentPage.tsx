@@ -1,14 +1,14 @@
 import type { IPage } from "../types";
 
-function AgentPanelContent() {
+function AgentPageContent() {
 
   return (<div> Agent</div>);
 }
 
-export const AgentPanel: IPage = {
+export const AgentPage: IPage = {
   icon: <span>🤖</span>,
   title: 'Agents',
   description: 'agents',
   order: 2,
-  content: AgentPanelContent
+  content: AgentPageContent
 }

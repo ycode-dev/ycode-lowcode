@@ -1,4 +1,4 @@
-import type { IPage } from "../types";
+import type { IPage } from "../../types";
 
 
 function InteropPageContent() {
@@ -14,6 +14,6 @@ export const InteropPage: IPage = {
   icon: <div>#</div>,
   title: '集成',
   description: '集成',
-  order: 4,
+  order: 3,
   content: InteropPageContent
 }

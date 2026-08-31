@@ -1,4 +1,4 @@
-import type { IPage } from "../types";
+import type { IPage } from "../../types";
 
 function AgentPageContent() {
 

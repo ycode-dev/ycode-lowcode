@@ -26,28 +26,26 @@
 .sectionTitle {
   font-size: var(--font-size-lg);
   font-weight: 600;
-  margin-bottom: var(--spacing-4);
+  margin-top: var(--spacing-8);
   color: var(--color-text);
 }
 
 /* 网格布局 - 自动换行 */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: var(--spacing-4);
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-2);
+  margin-top: var(--spacing-4);
 }
 
 /* 卡片 - 左右布局 */
 .card {
-  display: flex;
-  gap: var(--spacing-4);
   background-color: var(--color-bg-white);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
-  padding: var(--spacing-5);
+  padding: var(--spacing-3);
   cursor: pointer;
   transition: box-shadow 0.2s, transform 0.2s;
-  min-height: 100px;
 }
 
 .card:hover {
@@ -55,15 +53,30 @@
   transform: translateY(-2px);
 }
 
+/* 左右布局变体 */
+.cardHorizontal {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--spacing-4);
+}
+
+/* 上下布局变体 */
+.cardVertical {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
+}
+
 /* 左侧图标 */
 .cardIcon {
-  font-size: 40px;
+  font-size: 24px;
   flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 60px;
-  height: 60px;
+  width: 40px;
+  height: 40px;
   background-color: var(--color-bg);
   border-radius: var(--radius-xl);
 }
@@ -74,37 +87,22 @@
   min-width: 0;
   display: flex;
   flex-direction: column;
+  margin-top: 4px;
 }
 
 .cardHeader {
   display: flex;
   align-items: center;
-  gap: var(--spacing-2);
-  margin-bottom: var(--spacing-2);
+  /* gap: var(--spacing-2); */
+  /* margin-bottom: var(--spacing-2); */
 }
 
 .cardTitle {
-  font-size: var(--font-size-base);
-  font-weight: 600;
+  /* font-size: var(--font-size-base); */
+  /* font-weight: 600; */
   color: var(--color-text);
   margin: 0;
   flex: 1;
-}
-
-.cardType {
-  font-size: var(--font-size-xs);
-  padding: 2px var(--spacing-2);
-  background-color: var(--color-bg-hover);
-  border-radius: var(--radius-sm);
-  color: var(--color-text-secondary);
-  flex-shrink: 0;
-}
-
-.cardDescription {
-  font-size: var(--font-size-sm);
-  color: var(--color-text-secondary);
-  margin: 0 0 var(--spacing-3) 0;
-  line-height: 1.5;
 }
 
 .cardMeta {
@@ -113,5 +111,11 @@
   display: flex;
   gap: var(--spacing-1);
   align-items: center;
-  margin-top: auto;
+  /* margin-top: auto; */
+}
+
+.cardDescription {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  margin-top: var(--spacing-1);
 }

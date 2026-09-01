@@ -1,67 +1,60 @@
-
 import { useState } from "react";
 import { usePanelRegistry } from "../hooks/usePanelRegistry";
 import { defaultPanels } from "../features";
-import '../index.css';
+import styles from './StartupPage.module.css';
 
 function StartupPage() {
-
-  let title = "WhyCode";
-
-  const { panels, activePanel, activatePanel } = usePanelRegistry(defaultPanels)
-
+  const title = "WhyCode";
+  const { panels, activePanel, activatePanel } = usePanelRegistry(defaultPanels);
   const ActiveContent = activePanel?.content;
 
   return (
-    <div className="flex h-screen">
-
-      <aside className="w-1/5 min-w-[200px] bg-gray-50 border-r flex flex-col">
-        <div className="p-4 border-b bg-white">
-          <h1 className="text-xl font-bold text-gray-800">{title}</h1>
+    <div className={styles.container}>
+      {/* 左侧边栏 */}
+      <aside className={styles.sidebar}>
+        {/* 头部 */}
+        <div className={styles.sidebarHeader}>
+          <h1 className={styles.title}>{title}</h1>
         </div>
 
-        {/* Functions */}
-
-        <nav className="flex-1 p-3 space-y-1">
-
+        {/* 功能导航 */}
+        <nav className={styles.nav}>
           {panels.map(panel => (
-            <div key={panel.title} onClick={() => activatePanel(panel.title)} className={`flex items-center gap-3 px-3 py-2.5 rounded-lg cursor-pointer transition-colors 
-            
-          ${activePanel?.title === panel.title
-                ? 'bg-blue-50 text-blue-600'
-                : 'hover:bg-gray-100 text-gray-700'}`}>
-              <span className="text-lg">{panel.icon}</span>
+            <div
+              key={panel.title}
+              onClick={() => activatePanel(panel.title)}
+              className={`${styles.navItem} ${activePanel?.title === panel.title ? styles.navItemActive : ''}`}
+            >
+              <span className={styles.icon}>{panel.icon}</span>
 
-              <div className="flex-1">
-                <div className="text-sm font-medium">{panel.title}</div>
+              <div className={styles.navContent}>
+                <div className={styles.navTitle}>{panel.title}</div>
               </div>
 
               {activePanel?.title === panel.title && (
-                <span className="w-1.5 h-1.5 bg-blue-500 rounded-full" />
+                <span className={styles.activeIndicator} />
               )}
-
             </div>
-
           ))}
         </nav>
 
-        {/* Projects */}
+        {/* Projects - 可以在这里添加 */}
 
-        {/* Personal */}
+        {/* Personal - 可以在这里添加 */}
       </aside>
 
-      <main className="flex-1 bg-white overflow-auto">
-        {ActiveContent
-          ? (<ActiveContent />)
-          : (
-            <div className="flex items-center justify-center h-full text-gray-400">
-              选择一个功能开始
-            </div>
-          )}
+      {/* 右侧主内容区 */}
+      <main className={styles.main}>
+        {ActiveContent ? (
+          <ActiveContent />
+        ) : (
+          <div className={styles.emptyState}>
+            选择一个功能开始
+          </div>
+        )}
       </main>
     </div>
   );
 }
-
 
 export default StartupPage;

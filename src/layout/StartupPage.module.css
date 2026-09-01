@@ -1,0 +1,101 @@
+.container {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* 侧边栏 */
+.sidebar {
+  width: 20%;
+  min-width: 200px;
+  background-color: var(--color-bg);
+  border-right: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+}
+
+/* 侧边栏头部 */
+.sidebarHeader {
+  padding: var(--spacing-4);
+  border-bottom: 1px solid var(--color-border);
+  background-color: var(--color-bg-white);
+}
+
+.title {
+  font-size: var(--font-size-xl);
+  font-weight: bold;
+  color: var(--color-text);
+}
+
+/* 导航区域 */
+.nav {
+  flex: 1;
+  padding: var(--spacing-3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-1);
+  overflow-y: auto;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  padding: var(--spacing-2) var(--spacing-3);
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+  color: var(--color-text-secondary);
+}
+
+.navItem:hover {
+  background-color: var(--color-bg-hover);
+}
+
+.navItemActive {
+  background-color: var(--color-primary-bg);
+  color: var(--color-primary);
+}
+
+.icon {
+  font-size: var(--font-size-lg);
+  flex-shrink: 0;
+}
+
+.navContent {
+  flex: 1;
+  min-width: 0;
+}
+
+.navTitle {
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.activeIndicator {
+  width: 6px;
+  height: 6px;
+  background-color: var(--color-primary);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* 主内容区 */
+.main {
+  flex: 1;
+  background-color: var(--color-bg-white);
+  overflow-y: auto;
+  margin: var(--spacing-2) var(--spacing-4);
+}
+
+.emptyState {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: var(--color-text-muted);
+}

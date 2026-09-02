@@ -73,6 +73,7 @@ share/python-wheels/
 *.egg-info/
 .installed.cfg
 *.egg
+*.whl
 MANIFEST
 
 # Unit test / coverage reports
@@ -99,10 +100,12 @@ venv.bak/
 .venv/
 pythonenv*
 
-# MyPy
+# 类型检查 / Lint
 .mypy_cache/
 .dmypy.json
 dmypy.json
+.ruff_cache/
+.pyre/
 
 # PyCharm / IDE
 .idea/
@@ -112,8 +115,7 @@ dmypy.json
 # Jupyter Notebook
 .ipynb_checkpoints/
 
-# pyenv
-.python-version
+# 注意：uv 项目应提交 .python-version（固定 Python 版本，等同 Node 的 .nvmrc），不要忽略
 
 # =====================
 # Environment Variables
